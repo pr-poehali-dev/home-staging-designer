@@ -174,7 +174,6 @@ export default function Index() {
 
           <div className="flex flex-wrap gap-8 mt-14 opacity-0 animate-fade-up" style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}>
             {[
-              { num: "50+", label: "проектов" },
               { num: "1–2", label: "недели на всё" },
               { num: "100%", label: "онлайн" },
             ].map((s) => (
@@ -200,6 +199,55 @@ export default function Index() {
           </p>
         </div>
       </AnimatedSection>
+
+      {/* ABOUT — moved to top */}
+      <section id="about" className="py-20 px-6 md:px-16 lg:px-24" style={{ background: "var(--cream)" }}>
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+          <AnimatedSection className="flex-shrink-0">
+            <div className="rounded-2xl overflow-hidden"
+              style={{ width: "220px", height: "280px", boxShadow: "0 12px 36px rgba(92,61,42,0.15)" }}>
+              <img
+                src="https://cdn.poehali.dev/projects/05024956-ac3a-440b-9173-42c63fbdf7aa/bucket/89828620-763b-4d61-92d7-20a30baf9878.jpeg"
+                alt="Дизайнер-хоумстейджер"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection>
+            <span className="font-body text-sm tracking-widest uppercase" style={{ color: "var(--terracotta)", opacity: 0.8 }}>
+              обо мне
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-5 font-light" style={{ color: "var(--bark)" }}>
+              Дизайнер-хоумстейджер
+            </h2>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: "var(--bark)", opacity: 0.8 }}>
+              Помогаю сделать дом гармоничным и уютным — без пыли ремонта и огромных вложений. Работаю онлайн по всей России: от первой встречи до готового плана.
+            </p>
+            <div className="space-y-3">
+              {[
+                "Специализация — жилые и коммерческие пространства",
+                "Работаю полностью онлайн, по всей России",
+                "Результат — конкретный план, не абстрактная концепция",
+              ].map((t) => (
+                <div key={t} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ background: "var(--linen)" }}>
+                    <Icon name="Check" size={11} style={{ color: "var(--terracotta)" }} />
+                  </div>
+                  <p className="font-body text-sm leading-snug" style={{ color: "var(--bark)", opacity: 0.8 }}>{t}</p>
+                </div>
+              ))}
+            </div>
+            <a
+              href="#contacts"
+              className="inline-block mt-7 px-7 py-3.5 rounded-full font-body font-medium text-sm transition-all hover:opacity-90"
+              style={{ background: "var(--terracotta)", color: "var(--cream)" }}
+            >
+              Обсудить проект
+            </a>
+          </AnimatedSection>
+        </div>
+      </section>
 
       {/* HOMESTAGING ABOUT */}
       <section className="py-24 px-6 md:px-16 lg:px-24" style={{ background: "var(--cream)" }}>
@@ -292,7 +340,7 @@ export default function Index() {
       {/* SERVICES */}
       <section id="services" className="py-24 px-6 md:px-16 lg:px-24" style={{ background: "var(--linen)" }}>
         <AnimatedSection>
-          <div className="text-center mb-16">
+          <div className="text-center mb-14">
             <span className="font-body text-sm tracking-widest uppercase" style={{ color: "var(--terracotta)", opacity: 0.8 }}>
               что я делаю
             </span>
@@ -303,29 +351,33 @@ export default function Index() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-3">
           {services.map((s) => (
             <AnimatedSection key={s.title}>
               <div
-                className="group rounded-2xl p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="flex items-center justify-between gap-6 px-7 py-5 rounded-2xl transition-all duration-300 hover:-translate-x-1"
                 style={{
                   background: s.featured ? "var(--terracotta)" : "var(--cream)",
                   border: s.featured ? "none" : "1.5px solid var(--sand)",
-                  boxShadow: s.featured ? "0 8px 32px rgba(155,94,63,0.2)" : "0 2px 12px rgba(92,61,42,0.06)",
+                  boxShadow: s.featured ? "0 8px 28px rgba(155,94,63,0.18)" : "0 2px 8px rgba(92,61,42,0.05)",
                 }}
               >
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                  style={{ background: s.featured ? "rgba(245,239,228,0.2)" : "var(--linen)" }}>
-                  <Icon name={s.icon} size={22} style={{ color: s.featured ? "var(--cream)" : "var(--terracotta)" }} />
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: s.featured ? "rgba(245,239,228,0.2)" : "var(--linen)" }}>
+                    <Icon name={s.icon} size={18} style={{ color: s.featured ? "var(--cream)" : "var(--terracotta)" }} />
+                  </div>
+                  <span className="font-display text-xl font-semibold"
+                    style={{ color: s.featured ? "var(--cream)" : "var(--bark)" }}>
+                    {s.title}
+                  </span>
                 </div>
-                <h3 className="font-display text-2xl font-semibold mb-3"
-                  style={{ color: s.featured ? "var(--cream)" : "var(--bark)" }}>
-                  {s.title}
-                </h3>
-                <p className="font-body text-sm leading-relaxed flex-1"
-                  style={{ color: s.featured ? "rgba(245,239,228,0.85)" : "rgba(92,61,42,0.75)" }}>
-                  {s.desc}
-                </p>
+                {s.featured && (
+                  <span className="font-display text-xl font-semibold flex-shrink-0"
+                    style={{ color: "var(--cream)" }}>
+                    от 17 000 ₽
+                  </span>
+                )}
               </div>
             </AnimatedSection>
           ))}
@@ -420,63 +472,6 @@ export default function Index() {
               </div>
             </AnimatedSection>
           ))}
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section id="about" className="py-24 px-6 md:px-16 lg:px-24" style={{ background: "var(--cream)" }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-          <AnimatedSection>
-            <div className="relative">
-              <div className="w-full rounded-2xl overflow-hidden"
-                style={{ height: "460px" }}>
-                <img
-                  src="https://cdn.poehali.dev/projects/05024956-ac3a-440b-9173-42c63fbdf7aa/bucket/89828620-763b-4d61-92d7-20a30baf9878.jpeg"
-                  alt="Дизайнер-хоумстейджер"
-                  className="w-full h-full object-cover object-top"
-                  style={{ boxShadow: "0 16px 48px rgba(92,61,42,0.15)" }}
-                />
-              </div>
-              <div className="absolute -bottom-5 -right-5 rounded-xl px-5 py-4 shadow-lg"
-                style={{ background: "var(--terracotta)", color: "var(--cream)" }}>
-                <div className="font-display text-3xl font-semibold">50+</div>
-                <div className="font-body text-xs mt-0.5" style={{ opacity: 0.85 }}>проектов</div>
-              </div>
-            </div>
-          </AnimatedSection>
-          <AnimatedSection>
-            <span className="font-body text-sm tracking-widest uppercase" style={{ color: "var(--terracotta)", opacity: 0.8 }}>
-              обо мне
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-5 font-light" style={{ color: "var(--bark)" }}>
-              Дизайнер-<br />хоумстейджер
-            </h2>
-            <p className="font-body text-base leading-relaxed mb-6" style={{ color: "var(--bark)", opacity: 0.8 }}>
-              Помогаю сделать дом гармоничным и уютным — без пыли ремонта и огромных вложений. Работаю онлайн по всей России: от первой встречи до готового плана.
-            </p>
-            <div className="space-y-3">
-              {[
-                "Специализация — жилые и коммерческие пространства",
-                "Работаю полностью онлайн, по всей России",
-                "Результат — конкретный план, не абстрактная концепция",
-              ].map((t) => (
-                <div key={t} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ background: "var(--linen)" }}>
-                    <Icon name="Check" size={11} style={{ color: "var(--terracotta)" }} />
-                  </div>
-                  <p className="font-body text-sm leading-snug" style={{ color: "var(--bark)", opacity: 0.8 }}>{t}</p>
-                </div>
-              ))}
-            </div>
-            <a
-              href="#contacts"
-              className="inline-block mt-8 px-7 py-3.5 rounded-full font-body font-medium text-sm transition-all hover:opacity-90"
-              style={{ background: "var(--terracotta)", color: "var(--cream)" }}
-            >
-              Обсудить проект
-            </a>
-          </AnimatedSection>
         </div>
       </section>
 
