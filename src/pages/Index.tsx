@@ -236,7 +236,7 @@ export default function Index() {
                     Что входит
                   </h3>
                   <div className="text-right">
-                    <div className="font-display text-3xl font-semibold" style={{ color: "var(--cream)" }}>18 000 ₽</div>
+                    <div className="font-display text-3xl font-semibold" style={{ color: "var(--cream)" }}>от 17 000 ₽</div>
                     <div className="font-body text-xs mt-0.5" style={{ color: "rgba(245,239,228,0.7)" }}>за одно помещение</div>
                   </div>
                 </div>
