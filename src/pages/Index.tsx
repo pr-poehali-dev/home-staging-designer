@@ -181,6 +181,94 @@ export default function Index() {
         </div>
       </AnimatedSection>
 
+      {/* HOMESTAGING ABOUT */}
+      <section className="py-24 px-6 md:px-16 lg:px-24" style={{ background: "var(--cream)" }}>
+        <div className="max-w-6xl mx-auto">
+          <AnimatedSection>
+            <div className="mb-14">
+              <span className="font-body text-sm tracking-widest uppercase" style={{ color: "var(--terracotta)", opacity: 0.8 }}>
+                о подходе
+              </span>
+              <h2 className="font-display text-5xl md:text-6xl mt-3 font-light" style={{ color: "var(--bark)" }}>
+                Хоумстейджинг:<br />
+                <em style={{ color: "var(--terracotta)", fontStyle: "italic" }}>уют без ремонта</em>
+              </h2>
+              <div className="mt-4 w-16 h-0.5 rounded" style={{ background: "var(--terracotta)" }} />
+              <p className="font-body text-lg leading-relaxed mt-6 max-w-xl" style={{ color: "var(--bark)", opacity: 0.8 }}>
+                Преображаю интерьеры без пыли и больших вложений. Помогаю не только продать или сдать недвижимость, но и просто сделать дом гармоничнее.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            {/* Для кого */}
+            <AnimatedSection>
+              <div className="rounded-2xl p-8 h-full" style={{ background: "var(--linen)", border: "1.5px solid var(--sand)" }}>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "var(--cream)" }}>
+                    <Icon name="Users" size={20} style={{ color: "var(--terracotta)" }} />
+                  </div>
+                  <h3 className="font-display text-2xl font-semibold" style={{ color: "var(--bark)" }}>Для кого</h3>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    "Владельцы квартир и отдельных комнат — спальня, детская, кухня",
+                    "Те, кто хочет правильно расставить мебель и добавить уюта",
+                    "Коммерческие помещения — офисы, салоны, кафе",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                        style={{ background: "var(--terracotta)" }}>
+                        <Icon name="Check" size={11} style={{ color: "var(--cream)" }} />
+                      </div>
+                      <p className="font-body text-sm leading-snug" style={{ color: "var(--bark)", opacity: 0.85 }}>{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Пакет */}
+            <AnimatedSection>
+              <div className="rounded-2xl p-8" style={{ background: "var(--terracotta)" }}>
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="font-display text-2xl font-semibold" style={{ color: "var(--cream)" }}>
+                    Что входит
+                  </h3>
+                  <div className="text-right">
+                    <div className="font-display text-3xl font-semibold" style={{ color: "var(--cream)" }}>18 000 ₽</div>
+                    <div className="font-body text-xs mt-0.5" style={{ color: "rgba(245,239,228,0.7)" }}>за одно помещение</div>
+                  </div>
+                </div>
+                <div className="space-y-3 mb-6">
+                  {[
+                    "Планировочное решение",
+                    "Схема розеток и выключателей (по запросу)",
+                    "Цветовая гамма + коллаж",
+                    "Итоговая визуализация",
+                    "Подбор мебели и материалов под ваш бюджет",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span className="font-body text-base flex-shrink-0 mt-0.5" style={{ color: "rgba(245,239,228,0.7)" }}>→</span>
+                      <p className="font-body text-sm leading-snug" style={{ color: "var(--cream)", opacity: 0.9 }}>{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="pt-5 flex items-center gap-3" style={{ borderTop: "1px solid rgba(245,239,228,0.25)" }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: "rgba(245,239,228,0.2)" }}>
+                    <Icon name="Clock" size={15} style={{ color: "var(--cream)" }} />
+                  </div>
+                  <span className="font-body text-sm" style={{ color: "rgba(245,239,228,0.85)" }}>
+                    Срок: <strong style={{ color: "var(--cream)" }}>1–2 недели</strong>
+                  </span>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section id="services" className="py-24 px-6 md:px-16 lg:px-24" style={{ background: "var(--linen)" }}>
         <AnimatedSection>
