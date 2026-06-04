@@ -216,11 +216,12 @@ export default function Index() {
             <span className="font-body text-sm tracking-widest uppercase" style={{ color: "var(--terracotta)", opacity: 0.8 }}>
               обо мне
             </span>
-            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-5 font-light" style={{ color: "var(--bark)" }}>
-              Дизайнер-хоумстейджер
+            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-1 font-light" style={{ color: "var(--bark)" }}>
+              Светлана
             </h2>
+            <p className="font-body text-sm mb-5" style={{ color: "var(--terracotta)" }}>Дизайнер-хоумстейджер</p>
             <p className="font-body text-base leading-relaxed mb-6" style={{ color: "var(--bark)", opacity: 0.8 }}>
-              Помогаю сделать дом гармоничным и уютным — без пыли ремонта и огромных вложений. Работаю онлайн по всей России: от первой встречи до готового плана.
+              Люблю создавать красивые, гармоничные интерьеры — и с радостью помогу вам. Преображаю дома без пыли ремонта и огромных вложений, работаю онлайн по всей России.
             </p>
             <div className="space-y-3">
               {[
