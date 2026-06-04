@@ -110,7 +110,6 @@ export default function Index() {
           Уютный интерьер
         </span>
         <div className="hidden md:flex items-center gap-8 font-body text-sm font-medium" style={{ color: "var(--bark)" }}>
-          <a href="#services" className="hover:text-[var(--terracotta)] transition-colors">Услуги</a>
           <a href="#portfolio" className="hover:text-[var(--terracotta)] transition-colors">Работы</a>
           <a href="#about" className="hover:text-[var(--terracotta)] transition-colors">Обо мне</a>
           <a href="#contacts" className="hover:text-[var(--terracotta)] transition-colors">Контакты</a>
@@ -334,53 +333,6 @@ export default function Index() {
               </div>
             </AnimatedSection>
           </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" className="py-24 px-6 md:px-16 lg:px-24" style={{ background: "var(--linen)" }}>
-        <AnimatedSection>
-          <div className="text-center mb-14">
-            <span className="font-body text-sm tracking-widest uppercase" style={{ color: "var(--terracotta)", opacity: 0.8 }}>
-              что я делаю
-            </span>
-            <h2 className="font-display text-5xl md:text-6xl mt-3 font-light" style={{ color: "var(--bark)" }}>
-              Услуги
-            </h2>
-            <div className="mt-4 mx-auto w-16 h-0.5 rounded" style={{ background: "var(--terracotta)" }} />
-          </div>
-        </AnimatedSection>
-
-        <div className="max-w-4xl mx-auto space-y-3">
-          {services.map((s) => (
-            <AnimatedSection key={s.title}>
-              <div
-                className="flex items-center justify-between gap-6 px-7 py-5 rounded-2xl transition-all duration-300 hover:-translate-x-1"
-                style={{
-                  background: s.featured ? "var(--terracotta)" : "var(--cream)",
-                  border: s.featured ? "none" : "1.5px solid var(--sand)",
-                  boxShadow: s.featured ? "0 8px 28px rgba(155,94,63,0.18)" : "0 2px 8px rgba(92,61,42,0.05)",
-                }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: s.featured ? "rgba(245,239,228,0.2)" : "var(--linen)" }}>
-                    <Icon name={s.icon} size={18} style={{ color: s.featured ? "var(--cream)" : "var(--terracotta)" }} />
-                  </div>
-                  <span className="font-display text-xl font-semibold"
-                    style={{ color: s.featured ? "var(--cream)" : "var(--bark)" }}>
-                    {s.title}
-                  </span>
-                </div>
-                {s.featured && (
-                  <span className="font-display text-xl font-semibold flex-shrink-0"
-                    style={{ color: "var(--cream)" }}>
-                    от 17 000 ₽
-                  </span>
-                )}
-              </div>
-            </AnimatedSection>
-          ))}
         </div>
       </section>
 
