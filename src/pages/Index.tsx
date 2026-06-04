@@ -428,17 +428,14 @@ export default function Index() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <AnimatedSection>
             <div className="relative">
-              <div className="w-full rounded-2xl overflow-hidden flex items-center justify-center"
-                style={{ height: "460px", background: "var(--linen)", border: "2px dashed var(--sand)" }}>
-                <div className="text-center px-8">
-                  <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
-                    style={{ background: "var(--sand)" }}>
-                    <Icon name="User" size={36} style={{ color: "var(--terracotta)" }} />
-                  </div>
-                  <p className="font-body text-sm" style={{ color: "var(--bark)", opacity: 0.5 }}>
-                    Здесь будет ваше фото.<br />Пришлите портрет — я добавлю его на сайт.
-                  </p>
-                </div>
+              <div className="w-full rounded-2xl overflow-hidden"
+                style={{ height: "460px" }}>
+                <img
+                  src="https://cdn.poehali.dev/projects/05024956-ac3a-440b-9173-42c63fbdf7aa/bucket/89828620-763b-4d61-92d7-20a30baf9878.jpeg"
+                  alt="Дизайнер-хоумстейджер"
+                  className="w-full h-full object-cover object-top"
+                  style={{ boxShadow: "0 16px 48px rgba(92,61,42,0.15)" }}
+                />
               </div>
               <div className="absolute -bottom-5 -right-5 rounded-xl px-5 py-4 shadow-lg"
                 style={{ background: "var(--terracotta)", color: "var(--cream)" }}>
