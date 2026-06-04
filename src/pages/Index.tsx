@@ -9,41 +9,59 @@ const services = [
     icon: "LayoutDashboard",
     title: "Планировка пространства",
     desc: "Продуманная расстановка мебели с учётом вашего образа жизни и размеров комнаты. Вы получите понятный план с размерами.",
-    price: "от 8 000 ₽",
-    days: "3–5 дней",
     featured: false,
   },
   {
     icon: "Palette",
     title: "Подбор цветов и материалов",
     desc: "Гармоничная палитра, которая создаёт нужное настроение. Никакого угадывания — только точный расчёт.",
-    price: "от 6 000 ₽",
-    days: "2–3 дня",
     featured: false,
   },
   {
     icon: "Lightbulb",
     title: "Сценарии освещения",
     desc: "Тёплый уют вечером, бодрое утро, рабочая зона — правильный свет меняет восприятие любого интерьера.",
-    price: "от 5 000 ₽",
-    days: "2–3 дня",
     featured: false,
   },
   {
     icon: "ShoppingBag",
     title: "Готовый список покупок",
     desc: "Ссылки на конкретные товары в вашем бюджете. Вам остаётся только оформить заказ — без часов поиска.",
-    price: "от 4 000 ₽",
-    days: "1–2 дня",
     featured: false,
   },
   {
     icon: "Sparkles",
     title: "Комплексный дизайн",
     desc: "Полный пакет: планировка + цвета + свет + список покупок. Всё под ключ — ваш интерьер через 2 недели.",
-    price: "от 22 000 ₽",
-    days: "10–14 дней",
     featured: true,
+  },
+];
+
+const portfolio = [
+  {
+    url: "https://cdn.poehali.dev/projects/05024956-ac3a-440b-9173-42c63fbdf7aa/bucket/36b0cff6-0a8d-408c-b9f3-163e49bde2cf.jpeg",
+    title: "Кухня с обеденной зоной",
+    tag: "Кухня",
+  },
+  {
+    url: "https://cdn.poehali.dev/projects/05024956-ac3a-440b-9173-42c63fbdf7aa/bucket/39bf30eb-bdeb-4912-8b2b-9e2e9e4bc8d1.jpeg",
+    title: "3D-планировка квартиры",
+    tag: "Планировка",
+  },
+  {
+    url: "https://cdn.poehali.dev/projects/05024956-ac3a-440b-9173-42c63fbdf7aa/bucket/3e50cd3d-0638-41f4-a5e8-bf1262345750.jpeg",
+    title: "Спальня в современном стиле",
+    tag: "Спальня",
+  },
+  {
+    url: "https://cdn.poehali.dev/projects/05024956-ac3a-440b-9173-42c63fbdf7aa/bucket/9c75046b-7c80-4bef-ba14-14284fc503f5.png",
+    title: "Схема квартиры с расстановкой",
+    tag: "Планировка",
+  },
+  {
+    url: "https://cdn.poehali.dev/projects/05024956-ac3a-440b-9173-42c63fbdf7aa/bucket/5361888b-6191-4718-ab07-269b1cd3cb07.jpeg",
+    title: "3D-визуализация квартиры",
+    tag: "Визуализация",
   },
 ];
 
@@ -93,6 +111,8 @@ export default function Index() {
         </span>
         <div className="hidden md:flex items-center gap-8 font-body text-sm font-medium" style={{ color: "var(--bark)" }}>
           <a href="#services" className="hover:text-[var(--terracotta)] transition-colors">Услуги</a>
+          <a href="#portfolio" className="hover:text-[var(--terracotta)] transition-colors">Работы</a>
+          <a href="#about" className="hover:text-[var(--terracotta)] transition-colors">Обо мне</a>
           <a href="#contacts" className="hover:text-[var(--terracotta)] transition-colors">Контакты</a>
           <a
             href="#contacts"
@@ -302,24 +322,10 @@ export default function Index() {
                   style={{ color: s.featured ? "var(--cream)" : "var(--bark)" }}>
                   {s.title}
                 </h3>
-                <p className="font-body text-sm leading-relaxed flex-1 mb-6"
+                <p className="font-body text-sm leading-relaxed flex-1"
                   style={{ color: s.featured ? "rgba(245,239,228,0.85)" : "rgba(92,61,42,0.75)" }}>
                   {s.desc}
                 </p>
-                <div className="flex items-center justify-between mt-auto">
-                  <span className="font-display text-xl font-semibold"
-                    style={{ color: s.featured ? "var(--cream)" : "var(--terracotta)" }}>
-                    {s.price}
-                  </span>
-                  <span className="font-body text-xs px-3 py-1.5 rounded-full flex items-center gap-1"
-                    style={{
-                      background: s.featured ? "rgba(245,239,228,0.2)" : "var(--linen)",
-                      color: s.featured ? "var(--cream)" : "var(--bark)",
-                    }}>
-                    <Icon name="Clock" size={12} />
-                    {s.days}
-                  </span>
-                </div>
               </div>
             </AnimatedSection>
           ))}
@@ -369,6 +375,110 @@ export default function Index() {
                 </div>
               ))}
             </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* PORTFOLIO */}
+      <section id="portfolio" className="py-24 px-6 md:px-16 lg:px-24" style={{ background: "var(--linen)" }}>
+        <AnimatedSection>
+          <div className="text-center mb-14">
+            <span className="font-body text-sm tracking-widest uppercase" style={{ color: "var(--terracotta)", opacity: 0.8 }}>
+              примеры работ
+            </span>
+            <h2 className="font-display text-5xl md:text-6xl mt-3 font-light" style={{ color: "var(--bark)" }}>
+              Портфолио
+            </h2>
+            <div className="mt-4 mx-auto w-16 h-0.5 rounded" style={{ background: "var(--terracotta)" }} />
+          </div>
+        </AnimatedSection>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {portfolio.map((item, i) => (
+            <AnimatedSection key={item.url} className={i === 0 ? "md:col-span-2 lg:col-span-1" : ""}>
+              <div className="group relative overflow-hidden rounded-2xl cursor-pointer"
+                style={{ height: i === 0 ? "340px" : "260px", boxShadow: "0 4px 20px rgba(92,61,42,0.1)" }}>
+                <img
+                  src={item.url}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5"
+                  style={{ background: "linear-gradient(to top, rgba(92,61,42,0.75) 0%, transparent 60%)" }}>
+                  <span className="font-body text-xs px-2.5 py-1 rounded-full mb-2 self-start"
+                    style={{ background: "var(--terracotta)", color: "var(--cream)" }}>
+                    {item.tag}
+                  </span>
+                  <p className="font-display text-lg font-semibold" style={{ color: "var(--cream)" }}>{item.title}</p>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="font-body text-xs px-2.5 py-1 rounded-full"
+                    style={{ background: "rgba(245,239,228,0.9)", color: "var(--terracotta)" }}>
+                    {item.tag}
+                  </span>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-24 px-6 md:px-16 lg:px-24" style={{ background: "var(--cream)" }}>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+          <AnimatedSection>
+            <div className="relative">
+              <div className="w-full rounded-2xl overflow-hidden flex items-center justify-center"
+                style={{ height: "460px", background: "var(--linen)", border: "2px dashed var(--sand)" }}>
+                <div className="text-center px-8">
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+                    style={{ background: "var(--sand)" }}>
+                    <Icon name="User" size={36} style={{ color: "var(--terracotta)" }} />
+                  </div>
+                  <p className="font-body text-sm" style={{ color: "var(--bark)", opacity: 0.5 }}>
+                    Здесь будет ваше фото.<br />Пришлите портрет — я добавлю его на сайт.
+                  </p>
+                </div>
+              </div>
+              <div className="absolute -bottom-5 -right-5 rounded-xl px-5 py-4 shadow-lg"
+                style={{ background: "var(--terracotta)", color: "var(--cream)" }}>
+                <div className="font-display text-3xl font-semibold">50+</div>
+                <div className="font-body text-xs mt-0.5" style={{ opacity: 0.85 }}>проектов</div>
+              </div>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection>
+            <span className="font-body text-sm tracking-widest uppercase" style={{ color: "var(--terracotta)", opacity: 0.8 }}>
+              обо мне
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-5 font-light" style={{ color: "var(--bark)" }}>
+              Дизайнер-<br />хоумстейджер
+            </h2>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: "var(--bark)", opacity: 0.8 }}>
+              Помогаю сделать дом гармоничным и уютным — без пыли ремонта и огромных вложений. Работаю онлайн по всей России: от первой встречи до готового плана.
+            </p>
+            <div className="space-y-3">
+              {[
+                "Специализация — жилые и коммерческие пространства",
+                "Работаю полностью онлайн, по всей России",
+                "Результат — конкретный план, не абстрактная концепция",
+              ].map((t) => (
+                <div key={t} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ background: "var(--linen)" }}>
+                    <Icon name="Check" size={11} style={{ color: "var(--terracotta)" }} />
+                  </div>
+                  <p className="font-body text-sm leading-snug" style={{ color: "var(--bark)", opacity: 0.8 }}>{t}</p>
+                </div>
+              ))}
+            </div>
+            <a
+              href="#contacts"
+              className="inline-block mt-8 px-7 py-3.5 rounded-full font-body font-medium text-sm transition-all hover:opacity-90"
+              style={{ background: "var(--terracotta)", color: "var(--cream)" }}
+            >
+              Обсудить проект
+            </a>
           </AnimatedSection>
         </div>
       </section>
